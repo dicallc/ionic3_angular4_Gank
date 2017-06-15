@@ -1,14 +1,21 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
-</ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content >
+  <ion-card ion-item *ngFor="let item of obj_goodsListData, let i = index" (click)="itemSelected(item)">
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="{{image_list[i%5]}}" style="height: 48px;width: 48px">
+      </ion-avatar>
+      <h2>{{ item.who }}</h2>
+      <p>{{ item.publishedAt }}</p>
+    </ion-item>
+    <ion-card-content *ngIf="!show">
+      <p>{{ item.desc }}</p>
+    </ion-card-content>
+    <!--<ion-thumbnail >-->
+      <img *ngIf="show" src="{{ item.url }}" />
+    <!--</ion-thumbnail>-->
+
+    <!--<div class="card-title">  {{ item.desc }}</div>-->
+    <!--<div class="card-subtitle">{{ item.who }}</div>-->
+  </ion-card>
 </ion-content>
