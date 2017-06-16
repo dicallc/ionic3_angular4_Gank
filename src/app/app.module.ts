@@ -5,17 +5,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SuperTabsModule } from 'ionic2-super-tabs';
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
 import { HttpServiceProvider } from '../providers/http-service';
 import {HttpModule} from "@angular/http";
-import {MainPage} from "../pages/main/main";
 import {IntentService} from "../providers/IntentService";
+import {MainPageModule} from "../pages/main/main.module";
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,
-    MainPage,
   ],
   imports: [
     BrowserModule,
@@ -26,12 +23,11 @@ import {IntentService} from "../providers/IntentService";
       iconMode:"ios"
     }),
     SuperTabsModule.forRoot(),
+    MainPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,
-    MainPage
   ],
   providers: [
     StatusBar,
