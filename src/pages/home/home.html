@@ -21,7 +21,7 @@
     </ion-segment-button>
   </ion-segment>
   <ion-list>
-    <ion-card ion-item *ngFor="let item of obj_goodsListData, let i = index" (click)="itemSelected(item)">
+    <ion-card  *ngFor="let item of obj_goodsListData, let i = index" (click)="itemSelected(item)">
       <ion-item>
         <ion-avatar item-start>
           <img src="{{image_list[i%5]}}" style="height: 48px;width: 48px">
