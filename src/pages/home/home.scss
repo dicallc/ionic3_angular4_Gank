@@ -1,8 +1,11 @@
 page-home {
-  .item-ios{
-    padding-left:10px
+  .item-md{
+    padding-left:10px;
+    padding-right:10px
   }
   ion-card {
+    padding: 10px;
+    box-shadow: 10px 10px 5px #888888;
   }
 
   .card-title {

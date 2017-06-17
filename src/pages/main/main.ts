@@ -13,7 +13,7 @@ export class MainPage {
 
   @ViewChild(SuperTabs) superTabs: SuperTabs;
 
-  image_list= ["福利","Android","iOS","前端"," 瞎推荐","App"];
+  image_list= ["福利","Android","iOS","前端","App"];
   page1: any = HomePage;
   page2: any = HomePage;
   page3: any = HomePage;

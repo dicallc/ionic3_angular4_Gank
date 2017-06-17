@@ -19,8 +19,8 @@ import {MainPageModule} from "../pages/main/main.module";
     HttpModule,
      IonicModule.forRoot(MyApp,{
       tabsHideOnSubPages: 'true' ,       //隐藏全部子页面tabs
-      mode:'ios',
-      iconMode:"ios"
+      // mode:'android',
+      // iconMode:"ios"
     }),
     SuperTabsModule.forRoot(),
     MainPageModule

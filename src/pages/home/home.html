@@ -1,21 +1,41 @@
 
 <ion-content >
-  <ion-card ion-item *ngFor="let item of obj_goodsListData, let i = index" (click)="itemSelected(item)">
-    <ion-item>
-      <ion-avatar item-start>
-        <img src="{{image_list[i%5]}}" style="height: 48px;width: 48px">
-      </ion-avatar>
-      <h2>{{ item.who }}</h2>
-      <p>{{ item.publishedAt }}</p>
-    </ion-item>
-    <ion-card-content *ngIf="!show">
-      <p>{{ item.desc }}</p>
-    </ion-card-content>
-    <!--<ion-thumbnail >-->
+  <ion-segment [(ngModel)]="segmentModel" (ionChange)="onSegmentChanged($event)">
+      <!--<ion-segment-button  *ngFor="let item of tabs_text, let i = index" color="secondary" value="first">-->
+        <!--{{ item }}-->
+      <!--</ion-segment-button>-->
+    <ion-segment-button value="福利">
+      福利
+    </ion-segment-button>
+    <ion-segment-button value="Android">
+      Android
+    </ion-segment-button>
+    <ion-segment-button value="iOS">
+      iOS
+    </ion-segment-button>
+    <ion-segment-button value="前端">
+      前端
+    </ion-segment-button>
+    <ion-segment-button value="App">
+      App
+    </ion-segment-button>
+  </ion-segment>
+  <ion-list>
+    <ion-card ion-item *ngFor="let item of obj_goodsListData, let i = index" (click)="itemSelected(item)">
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="{{image_list[i%5]}}" style="height: 48px;width: 48px">
+        </ion-avatar>
+        <h2>{{ item.who }}</h2>
+        <p>{{ item.publishedAt }}</p>
+      </ion-item>
+      <ion-card-content *ngIf="!show">
+        <p>{{ item.desc }}</p>
+      </ion-card-content>
       <img *ngIf="show" src="{{ item.url }}" />
-    <!--</ion-thumbnail>-->
+    </ion-card>
+  </ion-list>
 
-    <!--<div class="card-title">  {{ item.desc }}</div>-->
-    <!--<div class="card-subtitle">{{ item.who }}</div>-->
-  </ion-card>
+
+
 </ion-content>
